@@ -1,52 +1,55 @@
+# RoninFlow - Projeto em desenvolvimento
 
-# Setup Docker Laravel 11 com PHP 8.3
-[Assine a Academy, e Seja VIP!](https://academy.especializati.com.br)
+## Requisitos
 
-### Passo a passo
-Clone Repositório
-```sh
-git clone -b laravel-11-with-php-8.3 https://github.com/especializati/setup-docker-laravel.git app-laravel
+- **Docker**: Para criar um ambiente de desenvolvimento isolado
+- **Docker Compose**: Para gerenciar os contêineres necessários
+- **Node.js e NPM**: Para construir e gerenciar os arquivos estáticos
+
+## Configuração do Ambiente de Desenvolvimento
+
+### Passo a Passo
+
+1. **Clone o repositório:**
+``` bash
+git clone https://github.com/seu_usuario/roninflow.git
+cd roninflow
 ```
-```sh
-cd app-laravel
-```
 
-Suba os containers do projeto
-```sh
-docker-compose up -d
-```
-
-
-Crie o Arquivo .env
-```sh
+2. Crie o arquivo .env: 
+``` bash
 cp .env.example .env
 ```
 
-Acesse o container app
-```sh
+3. Suba os contêineres com Docker Compose:
+``` bash
+docker-compose up -d
+```
+
+4. Acesse o container app
+``` bash
 docker-compose exec app bash
 ```
 
-
-Instale as dependências do projeto
-```sh
+5. Instale as dependências do projeto
+``` bash
 composer install
 ```
 
-Gere a key do projeto Laravel
-```sh
+6. Gere a key do projeto Laravel
+``` bash
 php artisan key:generate
 ```
 
-OPCIONAL: Gere o banco SQLite (caso não use o banco MySQL)
-```sh
-touch database/database.sqlite
-```
-
-Rodar as migrations
-```sh
+7. Rodar as migrations
+``` bash
 php artisan migrate
 ```
 
-Acesse o projeto
-[http://localhost:8000](http://localhost:8000)
+8. Na pasta raiz do projeto, execute:
+``` bash
+npm install
+npm run build
+```
+
+### Acesse o projeto http://localhost:8000
